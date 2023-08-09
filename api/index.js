@@ -2,8 +2,9 @@
  import mongoose from 'mongoose';
  import bodyParser from 'body-parser';
 import cors from 'cors'
-import router from './router.js'
+
 import express from 'express'
+import router from './../src/router.js';
 
 dotenv.config()
 const app=express()
@@ -24,6 +25,9 @@ app.use(cors())
 //Routing Implement
 app.use('/api/v1', router);
 
+app.get('/', (req,res)=>{
+    res.send('Success')
+})
 
 
 //Undefined route Implement
